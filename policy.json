@@ -1,8 +1,9 @@
 {
     "Version": "2012-10-17",
+    "Id": "Policy1727238870603",
     "Statement": [
         {
-            "Sid": "Statement1",
+            "Sid": "Stmt1727238859203",
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
