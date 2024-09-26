@@ -18,6 +18,8 @@ import User from './app/[locale]/user/page';
 import UserPass from './app/[locale]/user-pass/page';
 import UserFavor from './app/[locale]/user-favorite/page';
 import ComfirmPage from './app/[locale]/comfirm/page';
+import BlogPage from './app/[locale]/blog/page';
+import AboutUsPage from './app/[locale]/about-us/page';
 
 const router = createBrowserRouter([
   {
@@ -64,8 +66,16 @@ const router = createBrowserRouter([
     element: <ComfirmPage />,
   },
   {
+    path: '/blog',
+    element: <BlogPage />,
+  },
+  {
     path: '/restaurant',
     element: <Restaurant />,
+  },
+  {
+    path: '/about-us',
+    element: <AboutUsPage />,
   },
   {
     path: '/counter',

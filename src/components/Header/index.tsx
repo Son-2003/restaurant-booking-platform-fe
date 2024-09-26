@@ -1,3 +1,4 @@
+import { UserOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -43,27 +44,27 @@ export default function Header() {
               >
                 Sự kiện
               </a>
-              <a
-                href="#"
-                className="text-white text-lg md:text-xl hover:text-[#D86500] p-4 md:p-0"
+              <Link
+                to="/about-us"
+                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/about-us' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
                 onClick={handleLinkClick}
               >
-                Liên hệ
-              </a>
-              <a
-                href="#"
-                className="text-white text-lg md:text-xl hover:text-[#D86500] p-4 md:p-0"
+                Về chúng tôi
+              </Link>
+              <Link
+                to="/blog"
+                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/blog' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
                 onClick={handleLinkClick}
               >
                 Blogs
-              </a>
-              <a
-                href="#"
-                className="text-white text-lg md:text-xl hover:text-[#D86500] p-4 md:p-0"
+              </Link>
+              <Link
+                to="/restaurant"
+                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/restaurant' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
                 onClick={handleLinkClick}
               >
                 Gần bạn
-              </a>
+              </Link>
             </nav>
           </div>
           <div className="flex items-center space-x-2 md:space-x-4">
@@ -80,7 +81,10 @@ export default function Header() {
             >
               Đăng nhập
             </Link>
-            <div className="w-[40px] md:w-[49px] h-[40px] md:h-[49px] bg-[#d9d9d9] rounded-full"></div>
+            <div className="w-[40px] md:w-[50px] h-[40px] md:h-[49px] bg-[#d9d9d9] rounded-full flex items-center justify-center">
+              <UserOutlined style={{ fontSize: '24px' }} />
+            </div>
+
             <button
               className="md:hidden text-white text-2xl"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
