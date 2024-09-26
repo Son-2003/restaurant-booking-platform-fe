@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
  *{
   font-family: 'Roboto Slab', sans-serif;
  }
@@ -35,6 +36,9 @@ body {
   font-style: normal;
  }
 
+::-webkit-scrollbar {
+  display: none;
+}
 
 .ant-radio-wrapper-disabled .ant-radio-inner::after {
   background-color: var(--disabled-button-color) !important;
