@@ -10,9 +10,6 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  const isSignInPage = location.pathname === '/signin';
-  const isHomePage = location.pathname === '/';
-
   return (
     <>
       <header className="w-full h-[80px] md:h-[100px] bg-[#312525] fixed top-0 left-0 z-50">
@@ -29,28 +26,22 @@ export default function Header() {
               className={`md:flex space-x-4 md:space-x-10 ml-0 ${isMenuOpen ? 'flex' : 'hidden'} md:block flex-col md:flex-row absolute md:static left-0 top-[80px] w-full md:w-auto bg-[#312525] md:bg-transparent`}
               style={{ marginLeft: '0px' }}
             >
-              <a href="#"> </a>
+              <a href=""></a>
               <Link
-                to="/"
-                className={`text-lg md:text-xl p-4 md:p-0 ${isHomePage ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
+                to="/restaurant"
+                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/restaurant' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
                 onClick={handleLinkClick}
               >
-                Trang chủ
+                Gần bạn
               </Link>
-              <a
-                href="#"
+              <Link
+                to="/#"
                 className="text-white text-lg md:text-xl hover:text-[#D86500] p-4 md:p-0"
                 onClick={handleLinkClick}
               >
                 Sự kiện
-              </a>
-              <Link
-                to="/about-us"
-                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/about-us' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
-                onClick={handleLinkClick}
-              >
-                Về chúng tôi
               </Link>
+
               <Link
                 to="/blog"
                 className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/blog' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
@@ -59,11 +50,11 @@ export default function Header() {
                 Blogs
               </Link>
               <Link
-                to="/restaurant"
-                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/restaurant' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
+                to="/about-us"
+                className={`text-lg md:text-xl p-4 md:p-0 ${location.pathname === '/about-us' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
                 onClick={handleLinkClick}
               >
-                Gần bạn
+                Về chúng tôi
               </Link>
             </nav>
           </div>
@@ -77,13 +68,15 @@ export default function Header() {
             </div>
             <Link
               to="/signin"
-              className={`text-lg md:text-xl ${isSignInPage ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
+              className={`text-lg md:text-xl ${location.pathname === '/signin' ? 'text-[#D86500]' : 'text-white'} hover:text-[#D86500]`}
             >
               Đăng nhập
             </Link>
-            <div className="w-[40px] md:w-[50px] h-[40px] md:h-[49px] bg-[#d9d9d9] rounded-full flex items-center justify-center">
-              <UserOutlined style={{ fontSize: '24px' }} />
-            </div>
+            <Link to="/user">
+              <div className="w-[40px] md:w-[50px] h-[40px] md:h-[49px] bg-[#d9d9d9] rounded-full flex items-center justify-center">
+                <UserOutlined style={{ fontSize: '24px' }} />
+              </div>
+            </Link>
 
             <button
               className="md:hidden text-white text-2xl"
